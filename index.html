@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>개념기반학습, 초등교사를 위한 안내서 💡</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Pretendard', sans-serif;
+            color: #1a202c; /* 군청색 */
+        }
+        .text-blue-900 {
+            color: #1a202c; /* 군청색 */
+        }
+        .bg-teal-100 {
+            background-color: #ccfbf1;
+        }
+        .bg-sky-100 {
+            background-color: #e0f2fe;
+        }
+        .bg-orange-100 {
+            background-color: #fff7ed;
+        }
+        .accent-box {
+            background-color: #e0f2fe; /* sky-100 */
+            border-left: 5px solid #06b6d4; /* cyan-500 */
+            padding: 1rem;
+            border-radius: 0.375rem; /* rounded-md */
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: flex-start;
+        }
+        .accent-box-icon {
+            font-size: 1.5rem;
+            margin-right: 0.75rem;
+            color: #06b6d4; /* cyan-500 */
+        }
+        .custom-list-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 0.5rem;
+        }
+        .custom-list-icon {
+            color: #10b981; /* emerald-500 */
+            margin-right: 0.5rem;
+            font-size: 1.125rem;
+            line-height: 1.5rem;
+        }
+        details > summary {
+            list-style: none;
+            cursor: pointer;
+            padding: 0.75rem 1rem;
+            background-color: #f0f9ff; /* sky-50 */
+            border-radius: 0.375rem;
+            border: 1px solid #bae6fd; /* sky-200 */
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            font-weight: 600;
+            color: #0369a1; /* sky-700 */
+            transition: background-color 0.2s ease;
+        }
+        details > summary:hover {
+            background-color: #e0f2fe; /* sky-100 */
+        }
+        details[open] > summary {
+            background-color: #bae6fd; /* sky-200 */
+            color: #0369a1; /* sky-700 */
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+        details > summary::marker,
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
+        details > summary svg {
+            transition: transform 0.2s ease;
+            margin-left: auto;
+        }
+        details[open] > summary svg {
+            transform: rotate(90deg);
+        }
+        .accordion-content {
+            padding: 1rem;
+            background-color: #f0f9ff; /* sky-50 */
+            border: 1px solid #bae6fd; /* sky-200 */
+            border-top: none;
+            border-bottom-left-radius: 0.375rem;
+            border-bottom-right-radius: 0.375rem;
+            margin-bottom: 1rem;
+            color: #334155; /* slate-700 */
+        }
+
+        .highlight-table th {
+            background-color: #a7f3d0; /* emerald-200 */
+            color: #065f46; /* emerald-900 */
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 2px solid #34d399; /* emerald-400 */
+        }
+        .highlight-table td {
+            padding: 0.75rem;
+            border-bottom: 1px solid #d1fae5; /* emerald-100 */
+        }
+        .highlight-table tbody tr:hover {
+            background-color: #ecfdf5; /* emerald-50 */
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-teal-50 to-sky-50 min-h-screen text-blue-900">
+
+    <nav class="sticky top-0 z-50 bg-white shadow-md p-4 flex items-center justify-between">
+        <div class="flex items-center">
+            <span class="text-2xl mr-2">💡</span>
+            <h1 class="text-xl font-bold text-teal-700">개념기반학습 안내서</h1>
+        </div>
+        <ul class="flex space-x-6 text-sm font-medium">
+            <li><a href="#what-is-concept-based-learning" class="hover:text-teal-600 flex items-center"><span class="mr-1">🤔</span>개념기반학습이란?</a></li>
+            <li><a href="#why-concept-based-learning" class="hover:text-teal-600 flex items-center"><span class="mr-1">✨</span>왜 필요할까요?</a></li>
+            <li><a href="#how-to-design" class="hover:text-teal-600 flex items-center"><span class="mr-1">🛠️</span>수업 설계 방법</a></li>
+            <li><a href="#examples-and-tips" class="hover:text-teal-600 flex items-center"><span class="mr-1">🏫</span>초등 적용 팁</a></li>
+            <li><a href="#2022-curriculum" class="hover:text-teal-600 flex items-center"><span class="mr-1">📚</span>2022 개정 교육과정</a></li>
+        </ul>
+    </nav>
+
+    <div class="container mx-auto p-8 max-w-4xl bg-white rounded-lg shadow-xl mt-8 mb-8">
+
+        <header class="text-center mb-12">
+            <h1 class="text-5xl font-extrabold text-blue-900 mb-4 animate-pulse">
+                개념기반학습, 초등교사를 위한 안내서 💡
+            </h1>
+            <p class="text-lg text-gray-700">
+                아이들의 깊이 있는 사고와 전이 가능한 지식을 키우는 학습의 길
+            </p>
+        </header>
+
+        ---
+
+        <section id="what-is-concept-based-learning" class="mb-12">
+            <h2 class="text-4xl font-bold text-teal-700 mb-6 flex items-center">
+                <span class="mr-3">🤔</span> 개념기반학습이란 무엇일까요?
+            </h2>
+            <div class="accent-box">
+                <span class="accent-box-icon">🌟</span>
+                <div>
+                    <p class="font-semibold text-lg text-blue-900">
+                        개념기반학습은 단순한 사실이나 기술 암기를 넘어, **핵심 개념과 원리를 깊이 있게 이해**하고 이를 다양한 상황에 적용할 수 있도록 돕는 학습 방식입니다.
+                    </p>
+                </div>
+            </div>
+
+            <p class="mb-4 text-gray-800">
+                우리는 흔히 "무엇을 아는가?"에 집중하여 사실적 지식(Fact)과 기능적 지식(Skill)을 가르치는 데 익숙합니다. 하지만 개념기반학습은 여기에 "왜 아는가?"와 "어떻게 적용하는가?"라는 질문을 추가하여 **개념적 이해(Conceptual Understanding)**를 중요하게 다룹니다.
+            </p>
+
+            <h3 class="text-2xl font-semibold text-blue-800 mb-4 flex items-center">
+                <span class="mr-2">🔍</span> 3가지 지식의 차이점
+            </h3>
+            <table class="w-full border-collapse highlight-table text-blue-900">
+                <thead>
+                    <tr>
+                        <th>구분</th>
+                        <th>설명</th>
+                        <th>예시 (초등 3학년 '교통수단')</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>사실적 지식 (Facts)</strong></td>
+                        <td>특정 시기나 장소에 국한된 정보, 고유명사, 사건 등 구체적인 지식.</td>
+                        <td>조선 시대 교통수단은 말, 가마, 나룻배 등이다.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>기능적 지식 (Skills)</strong></td>
+                        <td>문제 해결, 사고, 행동에 필요한 역량. '어떻게 하는가'에 해당.</td>
+                        <td>다양한 교통수단의 종류를 분류할 수 있다. 교통수단의 장단점을 비교할 수 있다.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>개념적 이해 (Concepts)</strong></td>
+                        <td>보편적이고 전이 가능한 큰 아이디어. '왜 그런가', '무엇을 의미하는가'에 해당.</td>
+                        <td><span class="font-medium text-emerald-700">"사람들은 이동의 필요에 따라 교통수단을 발명하고 발전시킨다."</span></td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="mt-4 text-gray-700 text-sm">
+                개념적 이해는 특정 내용에 얽매이지 않고, 새로운 상황이나 맥락에서도 적용될 수 있는 **일반화된 지식**입니다.
+            </p>
+        </section>
+
+        ---
+
+        <section id="why-concept-based-learning" class="mb-12">
+            <h2 class="text-4xl font-bold text-teal-700 mb-6 flex items-center">
+                <span class="mr-3">✨</span> 왜 개념기반학습이 필요할까요?
+            </h2>
+            <p class="mb-6 text-gray-800">
+                정보의 홍수 시대에 단순한 사실 암기는 더 이상 중요하지 않습니다. 아이들이 스스로 사고하고, 새로운 문제에 직면했을 때 기존 지식을 활용하여 해결하는 능력이 필요합니다. 개념기반학습은 이러한 미래 역량을 키우는 데 핵심적인 역할을 합니다.
+            </p>
+
+            <h3 class="text-2xl font-semibold text-blue-800 mb-4 flex items-center">
+                <span class="mr-2">🚀</span> 개념기반학습의 장점
+            </h3>
+            <ul class="list-none p-0 text-gray-800">
+                <li class="custom-list-item">
+                    <span class="custom-list-icon">✅</span>
+                    <span>**지식의 전이 강화:** 배운 내용을 다른 맥락이나 상황에 쉽게 적용할 수 있게 합니다.</span>
+                </li>
+                <li class="custom-list-item">
+                    <span class="custom-list-icon">✅</span>
+                    <span>**깊이 있는 이해:** 단순 암기를 넘어 현상 이면의 원리와 의미를 파악하게 돕습니다.</span>
+                </li>
+                <li class="custom-list-item">
+                    <span class="custom-list-icon">✅</span>
+                    <span>**비판적 사고력 증진:** '왜?'라는 질문을 통해 스스로 생각하고 판단하는 힘을 기릅니다.</span>
+                </li>
+                <li class="custom-list-item">
+                    <span class="custom-list-icon">✅</span>
+                    <span>**학습 동기 유발:** 흥미로운 질문과 탐구 활동을 통해 능동적인 학습을 유도합니다.</span>
+                </li>
+                <li class="custom-list-item">
+                    <span class="custom-list-icon">✅</span>
+                    <span>**자기 주도 학습 능력 향상:** 스스로 질문을 만들고 답을 찾아가는 과정을 경험하게 합니다.</span>
+                </li>
+            </ul>
+
+            <h3 class="text-2xl font-semibold text-blue-800 mb-4 mt-8 flex items-center">
+                <span class="mr-2">⚠️</span> 고려해야 할 점
+            </h3>
+            <ul class="list-none p-0 text-gray-800">
+                <li class="custom-list-item">
+                    <span class="custom-list-icon text-orange-500">❗️</span>
+                    <span>**교사의 전문성 요구:** 단원 내 일반화를 도출하는 과정은 고난도의 작업이 될 수 있습니다.</span>
+                </li>
+                <li class="custom-list-item">
+                    <span class="custom-list-icon text-orange-500">❗️</span>
+                    <span>**시간 소요:** 깊이 있는 탐구를 위해 충분한 시간이 필요하며, 수업 설계에 더 많은 노력이 들어갈 수 있습니다.</span>
+                </li>
+                <li class="custom-list-item">
+                    <span class="custom-list-icon text-orange-500">❗️</span>
+                    <span>**기초 지식의 중요성:** 개념적 이해도 중요하지만, 사실적 지식과 기능적 지식이 바탕이 되어야 합니다.</span>
+                </li>
+            </ul>
+        </section>
+
+        ---
+
+        <section id="how-to-design" class="mb-12">
+            <h2 class="text-4xl font-bold text-teal-700 mb-6 flex items-center">
+                <span class="mr-3">🛠️</span> 개념기반 수업, 어떻게 설계할까요?
+            </h2>
+            <p class="mb-6 text-gray-800">
+                개념기반수업은 일반적으로 '역방향 설계(Backward Design)' 방식을 따릅니다. 최종적인 목표(개념적 이해)를 설정한 뒤, 이를 달성하기 위한 평가 방법과 학습 활동을 설계하는 방식입니다.
+            </p>
+
+            <h3 class="text-2xl font-semibold text-blue-800 mb-4 flex items-center">
+                <span class="mr-2">🏗️</span> 설계 3단계
+            </h3>
+
+            <details>
+                <summary>
+                    <span class="flex items-center"><span class="text-2xl mr-2">1단계</span> <span class="text-blue-900">바라는 결과 확인하기 (개념적 이해 설정)</span></span>
+                    <svg class="fill-current opacity-75" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg>
+                </summary>
+                <div class="accordion-content">
+                    <p class="mb-2">가장 먼저, 학생들이 궁극적으로 **무엇을 이해하길 바라는지**를 명확히 정의합니다. 이는 일반화된 문장(Generalization) 형태로 진술됩니다.</p>
+                    <ul class="list-disc list-inside ml-4 text-gray-700">
+                        <li>**핵심 개념(Key Concepts) 선정:** 교과 내용에서 전이 가능한 보편적이고 큰 아이디어를 선택합니다. (예: 변화, 시스템, 균형, 상호작용, 패턴, 원인과 결과 등)</li>
+                        <li>**관련 개념(Related Concepts) 선정:** 핵심 개념을 특정 교과 내용에 적용하여 심화 이해를 돕는 개념입니다. (예: 사회과 '경제' 단원에서 핵심 개념 '상호작용'과 관련된 개념으로 '생산', '소비', '교환' 등)</li>
+                        <li>**일반화된 문장(Generalization) 만들기:** 핵심 개념과 관련 개념을 연결하여 학생들이 이해해야 할 큰 아이디어를 문장으로 만듭니다.
+                            <div class="accent-box mt-3">
+                                <span class="accent-box-icon">💡</span>
+                                <div>
+                                    <p class="font-medium text-base text-blue-900">
+                                        **예시:** "사람들은 <span class="font-bold text-sky-700">이동의 필요</span>에 따라 <span class="font-bold text-sky-700">교통수단</span>을 <span class="font-bold text-sky-700">발명</span>하고 <span class="font-bold text-sky-700">발전</span>시킨다."
+                                        <br><span class="text-sm text-gray-600">(핵심 개념: 필요, 발명/발전)</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </details>
+
+            <details>
+                <summary>
+                    <span class="flex items-center"><span class="text-2xl mr-2">2단계</span> <span class="text-blue-900">수용 가능한 증거 결정하기 (평가 계획)</span></span>
+                    <svg class="fill-current opacity-75" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg>
+                </summary>
+                <div class="accordion-content">
+                    <p class="mb-2">학생들이 1단계에서 설정한 개념적 이해에 도달했음을 어떻게 알 수 있을까요? 학생들이 보여줄 수 있는 수행 과제를 계획합니다.</p>
+                    <ul class="list-disc list-inside ml-4 text-gray-700">
+                        <li>**수행 과제:** 학생들이 배운 개념을 적용하여 문제를 해결하거나 결과물을 만들어내는 과제입니다. (예: 특정 시대의 교통수단을 조사하여 변화 과정을 발표하기, 미래 교통수단 아이디어 구상 및 발표하기)</li>
+                        <li>**평가 루브릭:** 수행 과제를 평가할 기준을 명확하게 제시하여, 학생들이 무엇을 어떻게 보여줘야 하는지 알 수 있게 합니다.</li>
+                    </ul>
+                </div>
+            </details>
+
+            <details>
+                <summary>
+                    <span class="flex items-center"><span class="text-2xl mr-2">3단계</span> <span class="text-blue-900">학습 경험과 교수 계획하기 (수업 활동 설계)</span></span>
+                    <svg class="fill-current opacity-75" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg>
+                </summary>
+                <div class="accordion-content">
+                    <p class="mb-2">설정한 목표와 평가를 바탕으로, 학생들이 개념적 이해에 도달할 수 있도록 효과적인 학습 경험과 교수 전략을 계획합니다.</p>
+                    <ul class="list-disc list-inside ml-4 text-gray-700">
+                        <li>**탐구 질문(Inquiry Questions) 활용:** 학생들이 스스로 사고하고 탐구할 수 있도록 유도하는 질문을 개발합니다.
+                            <ul class="list-none p-0 ml-4">
+                                <li class="custom-list-item"><span class="custom-list-icon">❓</span>**사실적 질문:** '무엇?' '누구?' '언제?' (예: 우리 동네에는 어떤 교통수단이 있나요?)</li>
+                                <li class="custom-list-item"><span class="custom-list-icon">🤔</span>**개념적 질문:** '왜?' '어떻게?' '무슨 의미?' (예: 교통수단은 왜 시대에 따라 달라질까요?)</li>
+                                <li class="custom-list-item"><span class="custom-list-icon">⚖️</span>**논쟁적 질문:** '어떤 가치?' '어떤 선택?' (예: 미래의 교통수단은 어떤 모습이어야 할까요? 그 이유는 무엇인가요?)</li>
+                            </ul>
+                        </li>
+                        <li>**다양한 학습 활동:** 토론, 프로젝트, 실험, 역할극 등 학생들이 적극적으로 참여하여 개념을 구성할 수 있는 활동을 구성합니다.</li>
+                        <li>**지식, 기능, 개념의 통합:** 각 활동에서 학생들이 어떤 사실적 지식과 기능적 지식을 배우며, 궁극적으로 어떤 개념적 이해에 도달하는지 연결합니다.</li>
+                    </ul>
+                </div>
+            </details>
+        </section>
+
+        ---
+
+        <section id="examples-and-tips" class="mb-12">
+            <h2 class="text-4xl font-bold text-teal-700 mb-6 flex items-center">
+                <span class="mr-3">🏫</span> 초등 교육 현장 적용 팁
+            </h2>
+            <p class="mb-6 text-gray-800">
+                초등학생들은 구체적인 경험을 통해 배우는 것이 중요합니다. 개념기반학습을 초등 수업에 적용할 때 다음과 같은 점들을 고려해보세요.
+            </p>
+
+            <h3 class="text-2xl font-semibold text-blue-800 mb-4 flex items-center">
+                <span class="mr-2">💡</span> 실천적 제안
+            </h3>
+            <ul class="list-none p-0 text-gray-800">
+                <li class="custom-list-item">
+                    <span class="custom-list-icon">🌟</span>
+                    <span>**흥미로운 도입:** 학생들이 '왜 이것을 배우는지' 궁금해할 만한 질문이나 활동으로 수업을 시작합니다. (예: 사진, 동영상, 짧은 이야기 활용)</span>
+                </li>
+                <li class="custom-list-item">
+                    <span class="custom-list-icon">🤝</span>
+                    <span>**협력 학습:** 모둠 활동을 통해 학생들이 서로의 아이디어를 공유하고, 토론하며 개념을 함께 구성하도록 유도합니다.</span>
+                </li>
+                <li class="custom-list-item">
+                    <span class="custom-list-icon">✍️</span>
+                    <span>**다양한 표현 기회:** 글쓰기, 그림 그리기, 발표, 만들기 등 다양한 방법으로 배운 개념을 표현하게 합니다.</span>
+                </li>
+                <li class="custom-list-item">
+                    <span class="custom-list-icon">🔄</span>
+                    <span>**개념의 재확인:** 수업 중 여러 번 '그래서 이게 무슨 의미일까?', '다른 상황에서도 이렇게 생각할 수 있을까?'와 같은 질문으로 개념을 다시 상기시킵니다.</span>
+                </li>
+                <li class="custom-list-item">
+                    <span class="custom-list-icon">🏡</span>
+                    <span>**삶과의 연결:** 배운 개념이 실생활과 어떻게 연결되는지 탐색하는 활동을 포함하여 지식의 전이를 자연스럽게 유도합니다.</span>
+                </li>
+            </ul>
+
+            <div class="accent-box mt-8 bg-orange-100 border-orange-500">
+                <span class="accent-box-icon text-orange-600">🧡</span>
+                <div>
+                    <p class="font-semibold text-lg text-blue-900">
+                        **중요:** 개념기반학습은 <span class="font-bold text-orange-700">사실적 지식과 기능적 지식을 무시하는 것이 아닙니다.</span> 오히려 이들을 바탕으로 더 깊은 개념적 이해에 도달하게 하는 과정입니다. 탄탄한 기초 위에 의미 있는 건물을 짓는 것과 같습니다!
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        ---
+
+        <section id="2022-curriculum" class="mb-12">
+            <h2 class="text-4xl font-bold text-teal-700 mb-6 flex items-center">
+                <span class="mr-3">📚</span> 2022 개정 교육과정과 개념기반학습
+            </h2>
+            <p class="mb-6 text-gray-800">
+                2022 개정 교육과정은 '깊이 있는 학습(Deep Learning)'을 강조하며, 학생들이 지식의 습득을 넘어 삶과 연계된 경험을 통해 사고력을 키우고, 미래 사회의 다양한 변화에 유연하게 대응할 수 있는 **자기 주도성과 역량 함양**을 목표로 합니다. 이러한 교육과정의 방향은 개념기반학습의 철학과 맞닿아 있습니다.
+            </p>
+
+            <h3 class="text-2xl font-semibold text-blue-800 mb-4 flex items-center">
+                <span class="mr-2">🔗</span> 연계 지점
+            </h3>
+            <ul class="list-none p-0 text-gray-800">
+                <li class="custom-list-item">
+                    <span class="custom-list-icon">✅</span>
+                    <span>**핵심 역량 함양:** 2022 개정 교육과정의 핵심 역량(자기관리, 지식정보처리, 창의적 사고, 심미적 감성, 의사소통, 공동체 역량)은 개념기반 탐구 과정을 통해 자연스럽게 길러질 수 있습니다.</span>
+                </li>
+                <li class="custom-list-item">
+                    <span class="custom-list-icon">✅</span>
+                    <span>**교과 간 연계 및 통합:** 개념은 특정 교과에 갇히지 않고 여러 교과를 넘나들며 전이될 수 있어, 교과 간 연계와 통합 수업을 설계하는 데 용이합니다.</span>
+                </li>
+                <li class="custom-list-item">
+                    <span class="custom-list-icon">✅</span>
+                    <span>**학생 주도성 강화:** 탐구 질문을 통해 스스로 학습의 방향을 설정하고 답을 찾아가는 과정은 학생의 주도성을 높입니다.</span>
+                </li>
+                <li class="custom-list-item">
+                    <span class="custom-list-icon">✅</span>
+                    <span>**삶과 연결된 학습:** 개념적 이해는 학생들이 배운 지식을 현실 세계의 문제에 적용하고 삶의 의미를 탐색하는 데 도움을 줍니다.</span>
+                </li>
+            </ul>
+
+            <div class="accent-box mt-8 bg-sky-100 border-sky-500">
+                <span class="accent-box-icon text-sky-600">✨</span>
+                <div>
+                    <p class="font-semibold text-lg text-blue-900">
+                        2022 개정 교육과정은 **'왜' 배워야 하는지에 대한 의미**를 강조하고, 학생들이 **지식, 기능, 그리고 이해**를 통합적으로 기를 수 있도록 돕습니다. 개념기반학습은 이러한 교육과정의 목표를 실현하는 강력한 도구가 될 것입니다.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="text-center mt-12 pt-8 border-t border-gray-200 text-gray-600 text-sm">
+            <p>본 자료는 초등교사의 개념기반학습 이해를 돕기 위해 제작되었습니다.</p>
+            <p>&copy; 2025. 모든 권리 보유.</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
